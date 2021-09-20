@@ -5,7 +5,7 @@ declare @IN varchar(2) = 'IN';
 
 select *
 	--from Student s
-	--where s.StateCode = @statecode;
+	--where StateCode = @statecode;
 	--another way to do it below
 	from student
 	--where StateCode = @statecode;
