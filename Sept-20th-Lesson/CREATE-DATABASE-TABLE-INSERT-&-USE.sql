@@ -10,7 +10,7 @@
 
 -- A null column doesn't have to be included in an INSERT
 
--- Unique: no to rows can have the same number in the sequence column for the Topics table
+-- Unique: no two rows can have the same number in the sequence column for the Topics table
 
 CREATE TABLE Students (
 	Id int not null primary key identity(1,1),
@@ -53,3 +53,19 @@ INSERT into Topics
 
 select *
 	from Topics
+
+/* go
+ALTER TABLE Customers
+	add Updated DateTime;
+
+use this inside of BcDb */
+
+ALTER TABLE Customers
+	Add Note varchar(30) null; --can't use not null in alters when adding new col into a table with stuff in it already | ADD NOTE FIRST BEFORE ALTER COLUMN
+	alter column Note varchar(30) not null;
+
+	UPDATE Customers Set -- do this first before setting alter column Note to not null
+		Note = 'Default note', 
+		Updated = getDate()
+
+--select * from customers
