@@ -72,3 +72,31 @@ INSERT Users (Username, Password, Firstname, Lastname,IsReviewer, IsAdmin)
 			('us2', 'us2', 'Systems 2', 'User', 0, 0)
 
 select * from Users;
+select * from Vendors;
+select * from Products;
+select * from Requests;
+select * from Requestlines;
+go
+INSERT Vendors (Code, Name, Adress, City, State, Zip)
+	VALUES ('APL', 'Apple', '860 Smitten Dr.', 'LA', 'CA', '30755');
+--
+go
+INSERT Products (PartNbr, Name, Price, Unit, VendorId)
+	VALUES ('nx-7891', 'Iphone Xr', 300, '4-south', 1);
+go
+INSERT Products (PartNbr, Name, Price, Unit, VendorId)
+	VALUES ('nx-7861', 'Iphone 8', 250, '4.7-south', 1);
+--
+go
+INSERT Requests (Description, Justification, Status, Total, UserId)
+	VALUES ('Iphone 12', 'idk', 'Arrived', 1069, 4);
+go
+INSERT Requests (Description, Justification, Status, Total, UserId)
+	VALUES ('Iphone 8', 'idk', 'late', 250, 3);
+--
+go
+INSERT Requestlines (Quantity, RequestId, ProductsId)
+	VALUES (1, 6, 1);
+go
+INSERT Requestlines (Quantity, RequestId, ProductsId)
+	VALUES (4, 7, 2);
